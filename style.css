@@ -1,0 +1,335 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  background: #0a0f1a;
+  color: #fff;
+  line-height: 1.6;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 50px;
+  background: #111827;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.navbar .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.navbar nav a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #cbd5e1;
+  transition: 0.3s;
+}
+
+.navbar nav a:hover,
+.navbar nav a.active {
+  color: #60a5fa;
+}
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.hero h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  color: #9ca3af;
+  margin-bottom: 20px;
+}
+
+.hero img {
+  max-width: 80%;
+  border-radius: 12px;
+  margin: 20px 0;
+}
+
+/* About Section */
+.about {
+  background: #111827;
+  margin: 30px auto;
+  padding: 30px;
+  border-radius: 12px;
+  max-width: 900px;
+  text-align: center;
+}
+
+/* Footer */
+.footer-contact p {
+  margin: 6px 0;
+}
+.footer .footer-bottom {
+  background: #1f2937;
+  padding: 20px;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #9ca3af;
+  margin-top: 40px;
+}
+
+/* Register Page */
+.form-container {
+  max-width: 400px;
+  margin: 50px auto;
+  background: #111827;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.form-container h2 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.form-container label {
+  display: block;
+  margin: 10px 0 5px;
+}
+
+.form-container input {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  background: #1f2937;
+  color: #fff;
+}
+
+.form-container .btn-group {
+  display: flex;
+  justify-content: space-between;
+}
+.submit-btn {
+  background: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+.submit-btn:hover {
+  background: #0056b3;
+}
+
+
+button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  background: #3b82f6;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #2563eb;
+}
+
+.cancel-btn {
+  background: #6b7280;
+}
+
+.cancel-btn:hover {
+  background: #4b5563;
+}
+
+/* Permit Type Page */
+/* User account dropdown */
+.user-account {
+  position: relative;
+  margin-left: 20px;
+  cursor: pointer;
+}
+
+.user-icon {
+  font-size: 22px;
+  color: white;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 35px;
+  right: 0;
+  background: white;
+  border-radius: 6px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  min-width: 200px;
+  overflow: hidden;
+  z-index: 1000;
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 12px 16px;
+  text-decoration: none;
+  color: #333;
+  transition: background 0.3s;
+}
+
+.dropdown-menu a:hover {
+  background: #f2f2f2;
+}
+
+/* Show dropdown when active */
+.user-account.active .dropdown-menu {
+  display: block;
+}
+.permit-section {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.permit-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.permit-card {
+  background: #111827;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.permit-card:hover {
+  transform: scale(1.05);
+  background: #1e293b;
+}
+
+.permit-card img {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 15px;
+}
+
+.permit-description {
+  margin: 30px auto;
+  max-width: 800px;
+  padding: 20px;
+  border-radius: 12px;
+  background: #111827;
+}
+
+.apply-link {
+  display: block;
+  margin: 20px auto;
+  color: #60a5fa;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.apply-link:hover {
+  color: #3b82f6;
+}
+
+.permit-grid a {
+  text-decoration: none;
+  color: white;
+}
+
+/* Permit Form Section */
+.buildingPermit {
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+.buildingPermit h2 {
+    text-align: center;
+    color: #004080;
+    margin-bottom: 25px;
+}
+
+/* Form Styles */
+.permit-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #333;
+}
+
+.permit-form input[type="text"],
+.permit-form input[type="tel"],
+.permit-form input[type="date"],
+.permit-form select,
+.permit-form textarea,
+.permit-form input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+}
+
+.permit-form input:focus,
+.permit-form select:focus,
+.permit-form textarea:focus {
+    border-color: #004080;
+    outline: none;
+}
+
+/* Submit Button */
+.permit-form button {
+    width: 100%;
+    padding: 12px;
+    background-color: #004080;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.permit-form button:hover {
+    background-color: #003366;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .buildingPermit {
+        margin: 20px;
+        padding: 20px;
+    }
+
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar nav a {
+        margin: 10px 0 0 0;
+    }
+}

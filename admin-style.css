@@ -1,0 +1,210 @@
+/* ========== Global Styles ========== */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f4f6f8;
+  color: #333;
+}
+
+/* ========== Header ========== */
+.header {
+  background: #2c3e50;
+  color: white;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  z-index: 1000;
+}
+
+.header h1 {
+  font-size: 20px;
+  margin: 0;
+}
+
+/* ========== Sidebar ========== */
+.sidebar {
+  width: 220px;
+  height: 100vh;
+  position: fixed;
+  top: 60px; /* below header */
+  left: 0;
+  background: #34495e;
+  overflow-y: auto;
+}
+
+.sidebar a {
+  display: block;
+  padding: 12px 20px;
+  color: white;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.sidebar a:hover {
+  background: #2c3e50;
+}
+
+/* ========== Main Content ========== */
+.content {
+  margin-left: 220px;
+  padding: 80px 20px 20px 20px; /* space for header */
+}
+
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  margin-bottom: 20px;
+}
+
+/* ========== Tables ========== */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 10px;
+}
+
+table th, table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+table th {
+  background: #2c3e50;
+  color: white;
+}
+
+table tr:nth-child(even) {
+  background: #f9f9f9;
+}
+
+table tr:hover {
+  background: #f1f1f1;
+}
+
+/* ========== Buttons ========== */
+button, .logout-btn {
+  background: #3498db;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 14px;
+}
+
+button:hover, .logout-btn:hover {
+  background: #2980b9;
+}
+
+.logout-btn {
+  background: #e74c3c;
+}
+
+.logout-btn:hover {
+  background: #c0392b;
+}
+
+/* ========== Forms ========== */
+input[type="text"], input[type="email"], input[type="password"] {
+  width: 100%;
+  padding: 8px;
+  margin: 6px 0 12px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+form button {
+  background: #27ae60;
+}
+
+form button:hover {
+  background: #1e8449;
+}
+
+
+
+/*manage user page styles*/
+body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f4f6f8;
+      color: #333;
+    }
+
+    /* Header */
+    .header {
+      background: #2c3e50;
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .header h1 {
+      font-size: 20px;
+      margin: 0;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      width: 220px;
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      left: 0;
+      background: #34495e;
+      padding-top: 60px;
+    }
+
+    .sidebar a {
+      display: block;
+      padding: 12px 20px;
+      color: white;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .sidebar a:hover {
+      background: #2c3e50;
+    }
+
+    /* Main content */
+    .content {
+      margin-left: 220px;
+      padding: 20px;
+    }
+
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
+    }
+
+    /* Logout button */
+    .logout-btn {
+      background: #e74c3c;
+      color: white;
+      border: none;
+      padding: 8px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .logout-btn:hover {
+      background: #c0392b;
+    }
