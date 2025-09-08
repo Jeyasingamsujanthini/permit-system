@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manage Users</title>
+  <link rel="stylesheet" href="../assets/css/admin-style.css"> <!-- External CSS (optional) -->
+</head>
+<body>
+
+  <!-- Header -->
+  <div class="header">
+    <h1>Admin Dashboard - Manage Users</h1>
+    <button class="logout-btn" onclick="logoutAdmin()">Logout</button>
+  </div>
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <a href="admin.html">🏠 Dashboard</a>
+    <a href="manage-user.html">👥 Manage Users</a>
+    <a href="view-applications.html">📄 View Applications</a>
+    <a href="reports.html">📊 Reports</a>
+    <a href="settings.html">⚙️ Settings</a>
+  </div>
+
+  <!-- Main Content -->
+  <div class="content">
+    <div class="card">
+      <h2>Manage Users</h2>
+      <p>View, edit, or delete registered users.</p>
+
+      <table border="1" cellspacing="0" cellpadding="10" width="100%">
+        <tr>
+          <th>User ID</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Role</th>
+          <th>Actions</th>
+        </tr>
+        <tr>
+          <td>U001</td>
+          <td>John Doe</td>
+          <td>john@example.com</td>
+          <td>User</td>
+          <td><button>Edit</button> <button>Delete</button></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <script>
+    function logoutAdmin() {
+      alert("Successfully logout your account");
+      window.location.href = "index.html";
+    }
+  </script>
+
+</body>
+</html>

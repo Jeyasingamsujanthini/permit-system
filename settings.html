@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Settings</title>
+  <link rel="stylesheet" href="../assets/css/admin-style.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <div class="header">
+    <h1>Admin Dashboard - Settings</h1>
+    <button class="logout-btn" onclick="logoutAdmin()">Logout</button>
+  </div>
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <a href="admin-dashboard.html">🏠 Dashboard</a>
+    <a href="manage-user.html">👥 Manage Users</a>
+    <a href="view-applications.html">📄 View Applications</a>
+    <a href="reports.html">📊 Reports</a>
+    <a href="settings.html">⚙️ Settings</a>
+  </div>
+
+  <!-- Main Content -->
+  <div class="content">
+    <div class="card">
+      <h2>System Settings</h2>
+      <form>
+        <label>Admin Email:</label><br>
+        <input type="email" value="admin@example.com"><br><br>
+
+        <label>Change Password:</label><br>
+        <input type="password" placeholder="New Password"><br><br>
+
+        <label>Confirm Password:</label><br>
+        <input type="password" placeholder="Confirm Password"><br><br>
+
+        <button type="submit">Save Changes</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    function logoutAdmin() {
+      alert("Successfully logout your account");
+      window.location.href = "index.html";
+    }
+  </script>
+
+</body>
+</html>

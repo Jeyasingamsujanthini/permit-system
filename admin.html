@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="../assets/css/admin-style.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <div class="header">
+    <h1>Admin Dashboard</h1>
+    <button class="logout-btn" onclick="logoutAdmin()">Logout</button>
+
+    <script>
+  function logoutUser() {
+    // Show alert
+    alert("Successfully logout your account");
+
+    // Redirect to homepage
+    window.location.href = "index.html";
+  }
+</script>
+  </div>
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <a href="admin.html">🏠 Dashboard</a>
+    <a href="manage-user.html">👥 Manage Users</a>
+    <a href="view-applications.html">📄 View Applications</a>
+    <a href="reports.html">📊 Reports</a>
+    <a href="settings.html">⚙️ Settings</a>
+  </div>
+
+  <!-- Main content -->
+  <div class="content">
+    <div class="card">
+      <h2>Welcome, Admin!</h2>
+      <p>Use the sidebar to manage users, applications, and system settings.</p>
+    </div>
+
+    <div class="card">
+      <h2>Recent Applications</h2>
+      <table border="1" cellspacing="0" cellpadding="10" width="100%">
+        <tr>
+          <th>Application ID</th>
+          <th>User</th>
+          <th>Date</th>
+          <th>Status</th>
+        </tr>
+        <tr>
+          <td>APP-001</td>
+          <td>John Doe</td>
+          <td>2025-09-01</td>
+          <td>Pending</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <script>
+    function logoutAdmin() {
+      alert("Successfully logout your account");
+      window.location.href = "index.html"; // back to home
+    }
+  </script>
+
+</body>
+</html>
