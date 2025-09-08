@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Previous Applications - E-Permit</title>
+  <style>
+    :root { --brand:#111827; --brand-600:#003366; }
+    * { box-sizing: border-box; }
+    body{
+      margin:0; font-family: Arial, Helvetica, sans-serif;
+      background:#526693; /* keep previous page background */
+    }
+
+    /* ====== Navbar ====== */
+    .navbar{
+      position:relative; top:0;
+      display:flex; justify-content:space-between; align-items:center;
+      padding:14px 24px; background:var(--brand); color:#fff; z-index:100;
+    }
+    .logo{ font-weight:700; font-size:22px; }
+    .navbar nav{ display:flex; align-items:center; gap:20px; }
+
+    header.navbar nav a {
+      color: white;
+      margin-left: 15px;
+      text-decoration: none;
+      font-size: 16px;
+    }
+
+    header.navbar nav a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 30px auto;
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    table th, table td {
+      border: 1px solid #ddd;
+      padding: 10px;
+      text-align: center;
+    }
+
+    table th {
+      background: #3498db;
+      color: white;
+    }
+
+    table tr:nth-child(even) {
+      background: #f2f2f2;
+    }
+
+    .status-pending { color: orange; font-weight: bold; }
+    .status-approved { color: green; font-weight: bold; }
+    .status-rejected { color: red; font-weight: bold; }
+
+    .action-btn {
+      background: #3498db;
+      color: white;
+      border: none;
+      padding: 6px 12px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .action-btn:hover {
+      background: #217dbb;
+    }
+
+    .logout-btn{
+        background: #1d273a;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        font-size: 16px;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: 0.3s;
+        box-shadow: 0 2px 5px white;
+    }
+
+    .logout-btn:hover{
+        background: navy;
+        transform: scale(1.05);
+    }
+
+    .footer .footer-bottom {
+        background: #1f2937;
+        padding: 20px;
+        text-align: center;
+        font-size: 0.9rem;
+        color: #9ca3af;
+        margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">E-Permit</div>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="permit.html">Dashboard</a>
+      <a href="prevAppli.html">Previous Applications</a>
+      <!-- Logout Button -->
+<button class="logout-btn"  onclick="logoutUser()">Logout</button>
+
+<script>
+  function logoutUser() {
+    // Show alert
+    alert("Successfully logout your account");
+
+    // Redirect to homepage
+    window.location.href = "../index.html";
+  }
+</script>
+    </nav>
+  </header>
+
+  
+  <h2 style="font-family: Arial, sans-serif; color: white; margin-bottom: 5px; font-size: 30px; text-align: center;">
+    Previous Applications
+  </h2>
+  <p style="color: wheat; font-size: 14px; text-align: center;">
+    Below is the list of your previously submitted applications. 
+    You can view the details, check the status, and download approval letters if available.
+  </p>
+</div>
+
+  <div class="container">
+    <h2>Previous Applications</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Application ID</th>
+          <th>Permit Type</th>
+          <th>Project Address</th>
+          <th>Submitted Date</th>
+          <th>Status</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>APP-00123</td>
+          <td>Building Permit</td>
+          <td>123 Main Street, Colombo</td>
+          <td>2025-09-01</td>
+          <td class="status-pending">Pending</td>
+          <td><button class="action-btn">View</button></td>
+        </tr>
+        <tr>
+          <td>APP-00122</td>
+          <td>Wastewater Disposal</td>
+          <td>45 Kandy Road, Gampaha</td>
+          <td>2025-08-20</td>
+          <td class="status-approved">Approved</td>
+          <td><button class="action-btn">Download</button></td>
+        </tr>
+        <tr>
+          <td>APP-00121</td>
+          <td>Road Cutting Permit</td>
+          <td>78 Temple Road, Jaffna</td>
+          <td>2025-08-05</td>
+          <td class="status-rejected">Rejected</td>
+          <td><button class="action-btn">Appeal</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <script>
+    // Sample applications data (replace later with backend fetch)
+    const applications = [
+      {
+        id: "APP-00123",
+        type: "Building Permit",
+        address: "123 Main Street, Colombo",
+        date: "2025-09-01",
+        status: "pending"
+      },
+      {
+        id: "APP-00122",
+        type: "Wastewater Disposal",
+        address: "45 Kandy Road, Gampaha",
+        date: "2025-08-20",
+        status: "approved"
+      },
+      {
+        id: "APP-00121",
+        type: "Road Cutting Permit",
+        address: "78 Temple Road, Jaffna",
+        date: "2025-08-05",
+        status: "rejected"
+      }
+    ];
+
+    // Map status to CSS class
+    const statusClasses = {
+      pending: "status-pending",
+      approved: "status-approved",
+      rejected: "status-rejected"
+    };
+
+    // Load applications dynamically
+    const tableBody = document.getElementById("applicationsTable");
+
+    applications.forEach(app => {
+      const row = document.createElement("tr");
+
+      row.innerHTML = `
+        <td>${app.id}</td>
+        <td>${app.type}</td>
+        <td>${app.address}</td>
+        <td>${app.date}</td>
+        <td class="${statusClasses[app.status]}">${app.status.charAt(0).toUpperCase() + app.status.slice(1)}</td>
+        <td>
+          ${app.status === "pending" ? '<button class="action-btn">View</button>' : ""}
+          ${app.status === "approved" ? '<button class="action-btn">Download</button>' : ""}
+          ${app.status === "rejected" ? '<button class="action-btn">Appeal</button>' : ""}
+        </td>
+      `;
+
+      tableBody.appendChild(row);
+    });
+  </script>
+  <?php
+  include "backend/fetch_permits.php";
+  ?>
+
+  <footer class="footer">
+    <br><br><br><br><br><br><br>
+  <div class="footer-bottom">
+    <p>&copy; 2025 E-Permit Sri Lanka. All Rights Reserved.</p>
+    </div>
+  </footer>
+  ?>
+</body>
+</html>

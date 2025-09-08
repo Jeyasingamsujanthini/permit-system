@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Profile</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #5e6d84;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background: #2c3e50;
+      padding: 15px;
+      color: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header .logo {
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    header nav a {
+      color: white;
+      margin-left: 20px;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .logout-btn{
+        background: #1d273a;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        font-size: 16px;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: 0.3s;
+        box-shadow: 0 2px 5px white;
+    }
+
+    .logout-btn:hover{
+        background: navy;
+        transform: scale(1.05);
+    }
+
+    .profile-pic-wrapper{
+      position: relative;
+      display: inline-block;
+    }
+
+    .profile-pic{
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #3498db;
+      cursor: pointer;
+    }
+
+    .upload-button{
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      background: #3498db;
+      color: white;
+      border: none;
+      padding: 6px 10px;
+      border-radius: 20px;
+      font-size: 12px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .upload-button:hover {
+      background: #2c80b4;
+    }
+
+    #uploadImage{
+      display: none;
+    }
+
+    .profile-form label {
+      display: block;
+      margin: 20px 0 5px;
+      font-weight: bold;
+    }
+
+    .profile-form input, 
+    .profile-form select, 
+    .profile-form textarea {
+      width: 80%;
+      padding: 20px;
+      padding-left: 30px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    .profile-form button {
+      padding: 10px 20px;
+      background: #3498db;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .profile-form button:hover {
+      background: #2c80b4;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">E-Permit</div>
+    <nav>
+      <a href="permit.html">Dashboard</a>
+      <a href="profile.html">Profile</a>
+      <!-- Logout Button -->
+<button class="logout-btn"  onclick="logoutUser()">Logout</button>
+
+<script>
+  function logoutUser() {
+    // Show alert
+    alert("Successfully logout your account");
+
+    // Redirect to homepage
+    window.location.href = "../index.html";
+  }
+</script>
+    </nav>
+  </header>
+
+    <div class="profile-pic-wrapper">
+      <img src="default-profile.jpg" alt="Profile Picture" class="profile-pic" id="profileImage">
+      <button type="button" class="upload-button" onclick="document.getElementById('uploadImage').click();">Change Picture</button>
+      <input type="file" id="uploadImage" accept="image/*" >
+
+    </div>
+
+    <form class="profile-form" id="profileForm">
+      <label for="fullName">Full Name:</label>
+      <input type="text" id="fullName" name="fullName" value="John Doe" required>
+
+      <label for="nic">NIC / Passport No:</label>
+      <input type="text" id="nic" name="nic" value="123456789V" required>
+
+      <label for="email">Email Address:</label>
+      <input type="email" id="email" name="email" value="john@example.com" required>
+
+      <label for="phone">Phone Number:</label>
+      <input type="tel" id="phone" name="phone" value="0771234567" required>
+
+      <label for="address">Address:</label>
+      <textarea id="address" name="address" rows="3" required>Colombo, Sri Lanka</textarea>
+
+      <label for="role">User Role:</label>
+      <select id="role" name="role" disabled>
+        <option value="applicant" selected>Applicant</option>
+        <option value="admin">Admin</option>
+        <option value="officer">Officer</option>
+      </select>
+
+      <button type="submit">Save Changes</button>
+    </form>
+  </div>
+
+  <script>
+    // Profile picture preview
+    document.getElementById("uploadImage").addEventListener("change", function(event) {
+      const file = event.target.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+          document.getElementById("profileImage").src = e.target.result;
+        };
+        reader.readAsDataURL(file);
+      }
+    });
+
+    // Form validation
+    document.getElementById("profileForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      const name = document.getElementById("fullName").value.trim();
+      const nic = document.getElementById("nic").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const phone = document.getElementById("phone").value.trim();
+
+      const nicPattern = /^([0-9]{9}[vVxX]|[0-9]{12})$/;
+      if (!nicPattern.test(nic)) {
+        alert("Invalid NIC format!");
+        return;
+      }
+
+      const phonePattern = /^0\d{9}$/;
+      if (!phonePattern.test(phone)) {
+        alert("Invalid phone number. Must be 10 digits starting with 0.");
+        return;
+      }
+
+      if (name.length < 3) {
+        alert("Name must be at least 3 characters.");
+        return;
+      }
+
+      alert("Profile updated successfully ✅");
+      // Here you would send data to backend using fetch/ajax
+    });
+  </script>
+</body>
+</html>

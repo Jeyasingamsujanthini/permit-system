@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Construction & Land Use Permit</title>
+    <link rel="stylesheet" href="/e-permit-system/frontend/assets/css/style.css">
+    <style>
+      .logout-btn{
+        background: #1d273a;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        font-size: 16px;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: 0.3s;
+        box-shadow: 0 2px 5px white;
+    }
+
+    .logout-btn:hover{
+        background: navy;
+        transform: scale(1.05);
+    }
+    </style>
+</head>
+<body>
+    <header class="navbar">
+    <div class="logo">E-Permit</div>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../user/permit.html">Dashboard</a>
+      <!-- Logout Button -->
+<button class="logout-btn"  onclick="logoutUser()">Logout</button>
+
+<script>
+  function logoutUser() {
+    // Show alert
+    alert("Successfully logout your account");
+
+    // Redirect to homepage
+    window.location.href = "../index.html";
+  }
+</script>
+    </nav>
+  </header>
+
+  <section class="buildingPermit">
+    <h2>Construction & Land Use Permit Application</h2>
+    <form action="/e-permit-system/backend/permit_submit.php"  method="post"  class="permit-form">
+      <!-- fixed value to tell backend what permit type-->
+      <input type="hidden" name="permit_type" value="construction">
+
+      <!-- user inputs-->
+        <label for="pradeshiyaSabha" >Select Your Pradeshiya Sabha:</label>
+        <select id="Ps" name="Sabha" required>
+            <option value="">Select Pradeshiya Sabha</option>
+            <option value="1">Agalawatta</option>
+            <option value="2">Palli Kuduiruppu Akkaraipattu</option>
+            <option value="3">Akmeemana</option>
+            <option value="4">Akuressa</option>
+            <option value="5">Alaiyadivenbu</option>
+            <option value="6">Ambagamuwa</option>
+            <option value="7">Ambalangoda</option>
+            <option value="8">Ambalantota</option>
+            <option value="9">Anamaduwa</option>
+            <option value="10">Arachchikattuwa</option>
+            <option value="11">Aranayaka</option>
+            <option value="12">Athuraliya</option>
+            <option value="13">Baddegama</option>
+            <option value="14">Balapitiya</option>
+            <option value="15">Bandaragama</option>
+            <option value="16">Beliatta</option>
+            <option value="17">Beruwala</option>
+            <option value="18">Bibile</option>
+            <option value="19">Biyagama</option>
+            <option value="20">Bulathkohupitiya</option>
+            <option value="21">Chilaw</option>
+            <option value="22">Dammana</option>
+            <option value="23">Dambulla</option>
+            <option value="24">Dehiowita</option>
+            <option value="2-5">Dehiyattakandiya</option>
+            <option value="25">Delft</option>
+            <option value="26">Devinuwara</option>
+            <option value="27">Dickwella</option>
+            <option value="28">Dimbulagala</option>
+            <option value="29">Divulapitiya</option>
+            <option value="30">Dompe</option>
+            <option value="31">Eheliyagoda</option>
+            <option value="32">Elahera</option>
+            <option value="33">Ella</option>
+            <option value="34">Elpitiya</option>
+            <option value="35">Empilipitiya</option>
+            <option value="36">Gampaha</option>
+            <option value="37">Ganga Ilhala Korale</option>
+            <option value="38">Giribawa</option>
+            <option value="39">Gomarankadawala</option>
+            <option value="40">Habaraduwa</option>
+            <option value="41">Hakmana</option>
+            <option value="42">hali-Ela</option>
+            <option value="43">Hambantota</option>
+            <option value="44">hangurangetha</option>
+            <option value="45">Haaputale</option>
+            <option value="46">Hingurangoda</option>
+            <option value="47">Homagama</option>
+            <option value="48">Horana</option>
+            <option value="49">Horowpothana</option>
+            <option value="50">Ibbagamuwa</option>
+            <option value="51">Impulpe</option>
+            <option value="52">Irrakkamam</option>
+            <option value="53">Ja-ela</option>
+            <option value="54">Kahatagasdigiliya</option>
+            <option value="55">Kahawatta</option>
+            <option value="56">Kalpitiya</option>
+            <option value="57">Kalutara</option>
+            <option value="58">Kumpurupitiya</option>
+            <option value="59">Kandy Four Garvets and Gangawata Korale Ampitiya Pradeshiya Sabha</option>
+            <option value="60">Kantale</option>
+            <option value="61">Karachchi</option>
+            <option value="62">karaithivu</option>
+            <option value="63">Kataragama</option>
+            <option value="64">Kebithigollewa</option>
+            <option value="65">Kegalle</option>
+            <option value="66">kelaniya</option>
+            <option value="67">Kinniya</option>
+            <option value="68">Kuchchaweli</option>
+            <option value="69">Lankapura</option>
+            <option value="70">Lunugala</option>
+            <option value="71">MahaOya</option>
+            <option value="72">Maduruwela</option>
+            <option value="73">Mahiyanganaya</option>
+            <option value="74">Manmunai</option>
+            <option value="75">Mannar</option>
+            <option value="76">Matale</option>
+            <option value="77">Matugama</option>
+            <option value="78">Medagama</option>
+            <option value="79">Minuwangoda</option>
+            <option value="80">Mirigama</option>
+            <option value="81">Monaragala</option>
+            <option value="82">Muthur</option>
+            <option value="83">Nagoda</option>
+            <option value="84">Nallur</option>
+            <option value="85">Narammala</option>
+            <option value="86">Neluwa</option>
+            <option value="87">Nikaweratiya</option>
+            <option value="88">Nintavur</option>
+            <option value="89">Nuwara-Eliya</option>
+            <option value="90">Padaviya</option>
+            <option value="91">Palagala</option>
+            <option value="92">Pallepola</option>
+            <option value="93">Panduwasnuwara</option>
+            <option value="94">Pasgoda</option>
+            <option value="95">Passara</option>
+            <option value="96">Ratnapura</option>
+            <option value="97">Ragama</option>
+            <option value="98">Trincomalee Town and Gravets</option>
+            <option value="99">Udapalatha</option>
+            <option value="100">Udubaddawa</option>
+        </select>
+
+      <label for="applicantName">Applicant Name with Initial:</label>
+      <input type="text" id="applicantName" name="applicantName" required>
+
+        <label for="dob">Date Of Birth</label>
+        <input type="date" id="dob" name="dob" required>
+
+        <label for ="Age">Age</label>
+        <input type="number" id="age" name="age" required>
+
+        <label for="nicNo">NIC No:</label>
+        <input type="text" id="nicNo" name="nicNo" required>
+
+        <label for="address">Home Address:</label>
+        <input type="text" id="address" name="address" required>
+
+        <label for="contactNumber">Contact Number:</label>
+        <input type="tel" id="contactNumber" name="contactNumber" required>
+
+      <label for="projectAddress">Project Address:</label>
+      <input type="text" id="projectAddress" name="projectAddress" required>
+
+      <label for="permitType">Permit Type:</label>
+      <select id="permitType" name="permitType" required>
+        <option value="">Select Permit Type</option>
+        <option value="building">Building Permit</option>
+        <option value="roadCutting">Road Cutting Permit</option>
+      </select>
+
+      <label for="organization">Foam of orgaization:</label>
+      <select id="orgType" name="orgType" required>
+        <option value="">Select Foam of Organization</option>
+        <option value="sole">Sole Proprietorship</option>
+        <option value="partnership">Partnership</option>
+        <option value="corporation">Corporation</option>
+        <option value="llc">Limited Liability Company (LLC)</option>
+        <option value="nonprofit">Non-Profit Organization</option>
+        <option value="other">Other</option>
+      </select>
+
+      <label for="dtlsOfIndustry">Details of Industry:</label>
+      <select id="industry" name="industryType" required>
+        <option value="">Select Industry Type</option>
+        <option value="existing">Existing</option>
+        <option value="new">New</option>
+      </select>
+
+      <label for="Location" >Location (if an existing Industry, the place presently available)</label>
+      <label for="province">Province:</label>
+      <select id="province" name="province" required>
+        <option value="">Select Province</option>
+        <option value="central">Central</option>
+        <option value="eastern">Eastern</option>
+        <option value="northern">Northern</option>
+        <option value="southern">Southern</option>
+        <option value="western">Western</option>
+        <option value="northWestern">North Western</option>
+        <option value="northCentral">North Central</option>
+        <option value="uva">Uva</option>
+        <option value="sabaragamuwa">Sabaragamuwa</option>
+      </select>
+      <label for="district">District:</label>
+      <select id="district" name="district" required>
+        <option value="">Select District</option>
+        <option value="Ampara">Ampara</option>
+        <option value="Anuradhapura">Anuradhapura</option>
+        <option value="Badulla">Badulla</option>
+        <option value="Batticaloa">Batticaloa</option>
+        <option value="Colombo">Colombo</option>
+        <option value="Galle">Galle</option>
+        <option value="Gampaha">Gampaha</option>
+        <option value="Hambantota">Hambantota</option>
+        <option value="Jaffna">Jaffna</option>
+        <option value="Kalutara">Kalutara</option>
+        <option value="Kandy">Kandy</option>
+        <option value="Kegalle">Kegalle</option>
+        <option value="Kilinochchi">Kilinochchi</option>
+        <option value="Kurunegala">Kurunegala</option>
+        <option value="Mannar">Mannar</option>
+        <option value="Matale">Matale</option>
+        <option value="Matara">Matara</option>
+        <option value="Monaragala">Monaragala</option>
+        <option value="Mullaitivu">Mullaitivu</option>
+        <option value="Nuwara-Eliya">Nuwara Eliya</option>
+        <option value="Polonnaruwa">Polonnaruwa</option>
+        <option value="Puttalam">Puttalam</option>
+        <option value="Ratnapura">Ratnapura</option>
+        <option value="Trincomalee">Trincomalee</option>
+        <option value="Vavuniya">Vavuniya</option>
+      </select>
+
+
+      <label for="description">Project Description:</label>
+      <textarea id="description" name="description" rows="4" required></textarea>
+
+      <label for="startDate">Proposed Start Date:</label>
+      <input type="date" id="startDate" name="startDate" required>
+
+      <label for="endDate">Proposed End Date:</label>
+      <input type="date" id="endDate" name="endDate" required>
+
+      <label for="wastageType">Type of wastage discharge to environment:</label>
+      <select id="waste" name="wasteType" required>
+        <option value="">Select Waste Type</option>
+        <option value="solid">Solid Waste</option>
+        <option value="liquid">Liquid Waste</option>
+        <option value="gaseous">Gaseous Emissions</option>
+        <option value="hazardous">Hazardous Waste</option>
+        <option value="Garbage">Garbage</option>
+        <option value="industrial">Industrial Waste</option>
+        <option value="biomedical">Biomedical Waste</option>
+        <option value="other">Other</option>
+      <label for="documents">Upload Required Documents:</label>
+        <input type="file" id="documents" name="documents" multiple required>
+
+
+
+      <button type="submit">Submit Application</button>
+    </form>
+  </section>
+   
+  <script src="/frontend/assets/js/script.js"></script>
+  <footer class="footer">
+  <div class="footer-bottom">
+    <p>&copy; 2025 E-Permit Sri Lanka. All Rights Reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
