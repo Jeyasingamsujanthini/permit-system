@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register - E-Permit</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">E-Permit</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="register.html" class="active">Register</a>
+      <a href="login.html">Login</a>
+    </nav>
+  </header>
+
+  <div class="form-container">
+    <h2>Register</h2>
+    <form action="../backend/register.php" method="POST" id="registerForm">
+
+      <label for="name">Full Name:</label>
+      <input type="text" id="name" name="name" placeholder="Full name" required>
+
+      <label>Email</label>
+      <input type="email" id="regEmail" name="email" placeholder="you@example.com" required>
+
+      <label>Password</label>
+      <input type="password" id="regPassword" name="password" placeholder="********" required>
+
+      <label>Re-enter the password</label>
+      <input type="password" id="conPassword" name="confirm_password" placeholder="********" required>
+
+      <p id="regError" class="error"></p>
+
+      <p style="font-size: 0.9rem; text-align: center;">
+        Already have an account? <a href="login.html" style="color:#60a5fa;">Login</a>
+      </p>
+
+      <div class="btn-group">
+        <button type="submit" id="registerBtn">Register</button>
+        <button type="button" class="cancel-btn">Cancel</button>
+      </div>
+    </form>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-contact">
+      <h4>Contact</h4>
+      <p>Email: support@epermit.gov.lk</p>
+      <p>Hotline: +94 112 345 678</p>
+      <p>Address: Ministry of Local Government, Colombo, Sri Lanka</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 E-Permit Sri Lanka. All Rights Reserved.</p>
+    </div>
+  </footer>
+  <script src="/frontend/assets/js/script.js"></script>
+</body>
+</html>
